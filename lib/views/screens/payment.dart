@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_competiton/views/screens/home_screen.dart';
+import 'package:flutter_competition/views/screens/home_screen.dart';
 
 class Payment extends StatefulWidget {
   const Payment({super.key});

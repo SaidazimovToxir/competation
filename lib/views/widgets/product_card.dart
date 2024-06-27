@@ -8,17 +8,19 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
+      shrinkWrap: true,
+      // physics: const NeverScrollableScrollPhysics(),
       itemCount: productController.list.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         mainAxisSpacing: 10,
         crossAxisSpacing: 10.0,
-        mainAxisExtent: 250
+        mainAxisExtent: 250,
       ),
       itemBuilder: (context, index) {
         final product = productController.list[index];
         return Card(
-          color: const Color.fromARGB(255, 199, 213, 224),
+          // color: const Color.fromARGB(255, 199, 213, 224),
           clipBehavior: Clip.hardEdge,
           child: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -31,7 +33,7 @@ class ProductCard extends StatelessWidget {
                   children: [
                     Image.asset(
                       "assets/images/lamp.png",
-                      width: 100,
+                      width: 80,
                     ),
                     Row(
                       children: [
@@ -89,7 +91,7 @@ class ProductCard extends StatelessWidget {
                       icon: const Icon(Icons.favorite),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),
