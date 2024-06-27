@@ -154,8 +154,9 @@ class _DetailScreenState extends State<DetailScreen> {
           ),
           SliverPadding(
             padding: const EdgeInsets.all(16.0),
-            sliver: SliverToBoxAdapter(
-              child: ProductCard(productController: _productController),
+            sliver: ProductCard(
+              productController: _productController,
+              isSelected: true,
             ),
           ),
         ],

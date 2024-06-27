@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_competition/controllers/cart_provider.dart';
 import 'package:flutter_competition/controllers/product_controller.dart';
-import 'package:flutter_competition/views/screens/cart_scren_purchase.dart';
 import 'package:flutter_competition/views/screens/home_screen.dart';
 import 'package:flutter_competition/views/screens/main_screen.dart';
 import 'package:flutter_competition/views/screens/payment.dart';
@@ -30,7 +29,7 @@ class MainApp extends StatelessWidget {
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomeScreen(),
+        home: Payment(),
       ),
     );
   }

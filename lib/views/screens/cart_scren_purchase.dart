@@ -18,7 +18,7 @@ class CartScreenPurchase extends StatelessWidget {
             children: [
               GridView.builder(
                 shrinkWrap: true,
-                itemCount: 2, // Replace with your actual item count
+                itemCount: 2,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 4.0,

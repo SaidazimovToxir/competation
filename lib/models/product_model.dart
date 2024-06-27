@@ -4,6 +4,7 @@ class ProductModel {
   final String subtitle;
   final double price;
   final String rating;
+
   ProductModel({
     required this.id,
     required this.title,
