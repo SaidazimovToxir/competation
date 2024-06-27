@@ -29,8 +29,8 @@ class ProductCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.network(
-                      "https://i.ebayimg.com/thumbs/images/g/~YkAAOSwupJkwKKb/s-l960.webp",
+                    Image.asset(
+                      "assets/images/lamp.png",
                       width: 100,
                     ),
                     Row(
