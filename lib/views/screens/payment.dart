@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_competiton/views/screens/home_screen.dart';
 
 class Payment extends StatefulWidget {
   const Payment({super.key});
@@ -46,18 +47,27 @@ class _PaymentState extends State<Payment> {
                   fontSize: 20,
                   color: Colors.grey),
             ),
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              clipBehavior: Clip.hardEdge,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                shape: BoxShape.rectangle,
-                color: Colors.green,
-              ),
-              child: const Text(
-                "Back to Home",
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            SizedBox(
+              height: 30,
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (ctx) => HomeScreen()));
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                clipBehavior: Clip.hardEdge,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  shape: BoxShape.rectangle,
+                  color: Colors.green,
+                ),
+                child: const Text(
+                  "Back to Home",
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
               ),
             ),
           ],
