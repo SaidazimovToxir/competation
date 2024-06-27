@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
-      body: Column(
+      body: const Column(
         children: [ContainerWidget(), ButtonWidget()],
       ),
     );
