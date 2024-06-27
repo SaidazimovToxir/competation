@@ -5,36 +5,48 @@ import 'package:flutter_competition/models/product_model.dart';
 class ProductCard extends StatelessWidget {
   final ProductController productController;
   final bool isSelected;
-  const ProductCard(
-      {super.key, required this.productController, required this.isSelected});
+  const ProductCard({
+    super.key,
+    required this.productController,
+    required this.isSelected,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return isSelected
-        ? SliverGrid.builder(
-            itemCount: productController.list.length,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10.0,
-                mainAxisExtent: 250),
-            itemBuilder: (context, index) {
-              final product = productController.list[index];
-              return cardWidget(product);
-            },
-          )
-        : GridView.builder(
-            itemCount: productController.list.length,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10.0,
-                mainAxisExtent: 250),
-            itemBuilder: (context, index) {
-              final product = productController.list[index];
-              return cardWidget(product);
-            },
-          );
+    if (isSelected) {
+      return SliverGrid(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10.0,
+          mainAxisExtent: 250,
+        ),
+        delegate: SliverChildBuilderDelegate(
+          (context, index) {
+            final product = productController.list[index];
+            return cardWidget(product);
+          },
+          childCount: productController.list.length,
+        ),
+      );
+    } else {
+      return GridView.builder(
+        shrinkWrap: true,
+        // physics:
+        // const NeverScrollableScrollPhysics(),
+        itemCount: productController.list.length,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10.0,
+          mainAxisExtent: 250,
+        ),
+        itemBuilder: (context, index) {
+          final product = productController.list[index];
+          return cardWidget(product);
+        },
+      );
+    }
   }
 
   Widget cardWidget(ProductModel product) => Card(
@@ -49,9 +61,9 @@ class ProductCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image.network(
-                    "https://i.ebayimg.com/thumbs/images/g/~YkAAOSwupJkwKKb/s-l960.webp",
-                    width: 100,
+                  Image.asset(
+                    "assets/images/lamp.png",
+                    width: 80,
                   ),
                   Row(
                     children: [
@@ -102,18 +114,14 @@ class ProductCard extends StatelessWidget {
                     ),
                   ),
                   IconButton.filled(
+                    onPressed: () {},
                     style: IconButton.styleFrom(
                       backgroundColor: const Color(0xff0A982F),
                     ),
-                  ],
-                ),
-              ],
-            ),
-                    onPressed: () {},
                     icon: const Icon(Icons.favorite),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),
