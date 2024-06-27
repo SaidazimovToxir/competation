@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_competition/utils/app_constabs.dart';
 import 'package:provider/provider.dart';
-
 import '../../controllers/product_controller.dart';
 import '../widgets/custom_scroll.dart';
 import '../widgets/product_card.dart';
+import 'package:flutter_competition/views/widgets/button_widget.dart';
+import 'package:flutter_competition/views/widgets/container_widget.dart';
+import 'package:flutter_competition/views/widgets/custom_scroll.dart';
+import 'package:flutter_competition/views/widgets/product_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
