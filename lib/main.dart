@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_competiton/views/screens/home_screen.dart';
-
 import 'package:flutter_competiton/views/screens/detail_screen.dart';
 import 'package:flutter_competiton/views/screens/main_screen.dart';
+import 'package:flutter_competiton/views/widgets/custom_float_action_button.dart';
 
 
 void main() {
@@ -16,8 +15,12 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-
-      home: HomeScreen(),
+     debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.white,
+        body: MainScreen(),
+        floatingActionButton: CustomFloatActionButton(),
+      ),
     );
   }
 }
