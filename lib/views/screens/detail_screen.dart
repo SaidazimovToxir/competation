@@ -38,6 +38,7 @@ class _DetailScreenState extends State<DetailScreen> {
             padding: const EdgeInsets.all(16.0),
             sliver: ProductCard(
               productController: _productController,
+              isSelected: true,
             ),
           ),
         ],
