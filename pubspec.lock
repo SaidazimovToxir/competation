@@ -163,7 +163,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.0"
-<<<<<<< HEAD
   petitparser:
     dependency: transitive
     description:
@@ -172,7 +171,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.2"
-=======
   provider:
     dependency: "direct main"
     description:
@@ -181,7 +179,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.2"
->>>>>>> 373a96045ab1d833ba29ce7bfa4cc0e6f436fe6e
   sky_engine:
     dependency: transitive
     description: flutter

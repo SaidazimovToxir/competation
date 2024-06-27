@@ -53,7 +53,10 @@ class ContainerWidget extends StatelessWidget {
                 ],
               ),
               if (showImage)
-                Image.asset("assets/icons/forward.png", width: 35)
+                const Icon(
+                  Icons.arrow_right_alt_sharp,
+                  size: 50,
+                )
               else
                 additionalWidget ?? Container(),
             ],

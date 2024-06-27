@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'package:flutter_competition/views/widgets/button_widget.dart';
-import 'package:flutter_competition/views/widgets/container_widget.dart';
-=======
-import 'package:flutter_competiton/controllers/product_controller.dart';
-import 'package:flutter_competiton/utils/app_constabs.dart';
-import 'package:flutter_competiton/views/widgets/button_widget.dart';
-import 'package:flutter_competiton/views/widgets/container_widget.dart';
-import 'package:flutter_competiton/views/widgets/custom_scroll.dart';
-import 'package:flutter_competiton/views/widgets/product_card.dart';
+import 'package:flutter_competition/utils/app_constabs.dart';
 import 'package:provider/provider.dart';
->>>>>>> 373a96045ab1d833ba29ce7bfa4cc0e6f436fe6e
+
+import '../../controllers/product_controller.dart';
+import '../widgets/custom_scroll.dart';
+import '../widgets/product_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -64,23 +58,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 size: 25,
               )),
           CircleAvatar(
-            radius: 15,
-            child: Image.asset(
-              "assets/images/image.png",
-            ),
-          )
+              radius: 15, child: Image.asset("assets/images/profile.png"))
         ],
       ),
       body: Column(
         children: [
-<<<<<<< HEAD
-          ContainerWidget(
-            firstText: 'Hello',
-            secondText: 'Hello',
-          ),
-          ButtonWidget()
-=======
-          ContainerWidget(),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: SizedBox(
@@ -106,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -165,7 +147,6 @@ class _HomeScreenState extends State<HomeScreen> {
               productController: productController,
             ),
           )
->>>>>>> 373a96045ab1d833ba29ce7bfa4cc0e6f436fe6e
         ],
       ),
     );

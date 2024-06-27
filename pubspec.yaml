@@ -9,11 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-<<<<<<< HEAD
   image: ^4.2.0
-=======
   provider: ^6.1.2
->>>>>>> 373a96045ab1d833ba29ce7bfa4cc0e6f436fe6e
   
 
 dev_dependencies:
