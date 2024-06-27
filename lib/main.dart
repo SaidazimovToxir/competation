@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_competiton/views/screens/detail_screen.dart';
-import 'package:flutter_competiton/views/screens/main_screen.dart';
+import 'package:flutter_competition/controllers/cart_provider.dart';
+import 'package:flutter_competition/controllers/product_controller.dart';
+import 'package:flutter_competition/views/screens/cart_screen_purchase.dart';
+import 'package:flutter_competition/views/screens/home_screen.dart';
+import 'package:flutter_competition/views/screens/payment.dart';
+import 'package:flutter_competition/views/screens/detail_screen.dart';
+import 'package:flutter_competition/views/widgets/custom_float_action_button.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,9 +17,19 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: DetailScreen(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => ProductController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => CartProvider(),
+        ),
+      ],
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: CartScreenPurchase(),
+      ),
     );
   }
 }

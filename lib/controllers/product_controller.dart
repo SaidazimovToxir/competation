@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_competiton/models/product_model.dart';
+import 'package:flutter_competition/models/product_model.dart';
 
 class ProductController extends ChangeNotifier {
   final List<ProductModel> _list = [
