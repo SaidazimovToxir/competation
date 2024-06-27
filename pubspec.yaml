@@ -1,4 +1,4 @@
-name: flutter_competiton
+name: flutter_competition
 description: "A new Flutter project."
 publish_to: 'none'
 version: 0.1.0
@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  image: ^4.2.0
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +18,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+ 
+  assets:
+    - assets/images/
+    - assets/icons/
