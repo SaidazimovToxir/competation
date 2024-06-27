@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_competition/utils/app_constabs.dart';
-import 'package:flutter_competition/views/widgets/custom_scroll.dart';
+
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
