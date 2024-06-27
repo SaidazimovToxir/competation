@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_competiton/controllers/product_controller.dart';
 import 'package:flutter_competiton/views/screens/home_screen.dart';
+import 'package:flutter_competiton/views/screens/payment.dart';
 import 'package:flutter_competiton/views/screens/detail_screen.dart';
 import 'package:flutter_competiton/views/widgets/custom_float_action_button.dart';
 import 'package:provider/provider.dart';
@@ -23,7 +24,7 @@ class MainApp extends StatelessWidget {
       builder: (context, child) {
         return const MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: HomeScreen(),
+          home: Payment(),
         );
       },
     );
