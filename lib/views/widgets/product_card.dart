@@ -7,12 +7,13 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverGrid.builder(
+    return GridView.builder(
       itemCount: productController.list.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         mainAxisSpacing: 10,
         crossAxisSpacing: 10.0,
+        mainAxisExtent: 250
       ),
       itemBuilder: (context, index) {
         final product = productController.list[index];
