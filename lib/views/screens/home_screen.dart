@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_competiton/controllers/product_controller.dart';
 import 'package:flutter_competiton/utils/app_constabs.dart';
 import 'package:flutter_competiton/views/widgets/button_widget.dart';
 import 'package:flutter_competiton/views/widgets/container_widget.dart';
 import 'package:flutter_competiton/views/widgets/custom_scroll.dart';
+import 'package:flutter_competiton/views/widgets/product_card.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,28 +23,27 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {});
   }
 
-  List<String> texts = [
-    'apple',
-    'fwgapple',
-    'appgwrgle',
-    'applegwr',
-    'applewg',
-    'applgrwe',
-  ];
-
-  void _sortTexts(String criterion) {
+  void _sortTexts(String criterion, ProductController productController) {
     if (criterion == 'A-Z') {
-      texts.sort((a, b) => a.compareTo(b));
+      productController.list.sort((a, b) => a.title.compareTo(b.title));
     } else if (criterion == 'Z-A') {
-      texts.sort((a, b) => b.compareTo(a));
+      productController.list.sort((a, b) => b.title.compareTo(a.title));
+    } else if (criterion == 'Price') {
+      productController.list.sort((a, b) => b.price.compareTo(a.price));
     }
     setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
+    ProductController productController =
+        Provider.of<ProductController>(context);
+
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        surfaceTintColor: Colors.transparent,
+        shadowColor: Colors.transparent,
         leading: IconButton(onPressed: () {}, icon: const Icon(Icons.sort)),
         actions: [
           IconButton(
@@ -92,13 +94,13 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                  'Have _ products',
-                  style: TextStyle(
+                Text(
+                  'Have ${productController.list.length} products',
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w700,
                   ),
@@ -124,7 +126,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   onSelected: (String result) {
                     _popUpMenuVal = result;
-                    _sortTexts(result);
+                    _sortTexts(result, productController);
                     setState(() {});
                   },
                   itemBuilder: (BuildContext context) =>
@@ -147,13 +149,10 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Expanded(
-            child: ListView.builder(
-              itemCount: texts.length,
-              itemBuilder: (context, index) => Text(
-                texts[index],
-              ),
+            child: ProductCard(
+              productController: productController,
             ),
-          ),
+          )
         ],
       ),
     );
