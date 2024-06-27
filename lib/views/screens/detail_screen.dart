@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_competiton/controllers/product_controller.dart';
+import 'package:flutter_competiton/views/widgets/product_card.dart';
 
-class DetailScreen extends StatelessWidget {
+class DetailScreen extends StatefulWidget {
   const DetailScreen({super.key});
 
+  @override
+  State<DetailScreen> createState() => _DetailScreenState();
+}
+
+class _DetailScreenState extends State<DetailScreen> {
+  ProductController _productController = ProductController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,91 +36,8 @@ class DetailScreen extends StatelessWidget {
           ),
           SliverPadding(
             padding: const EdgeInsets.all(16.0),
-            sliver: SliverGrid.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10.0,
-              ),
-              itemBuilder: (context, index) {
-                return Card(
-                  color: const Color.fromARGB(255, 199, 213, 224),
-                  clipBehavior: Clip.hardEdge,
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Image.network(
-                              "https://i.ebayimg.com/thumbs/images/g/~YkAAOSwupJkwKKb/s-l960.webp",
-                              width: 100,
-                            ),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.star,
-                                  color: Colors.yellow.shade700,
-                                ),
-                                Text(
-                                  "(4.6)",
-                                  style: TextStyle(
-                                    color: Colors.yellow.shade700,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        const Text(
-                          "Title sgfsgsssgsgfsgsssgsgfsgsssgsgfsgsssg",
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        const Text(
-                          "category",
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
-                          style: TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w300,
-                            color: Colors.grey,
-                          ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Text(
-                              "\$142.00",
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 1,
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w300,
-                                color: Color(0xff0A982F),
-                              ),
-                            ),
-                            IconButton.filled(
-                              style: IconButton.styleFrom(
-                                backgroundColor: const Color(0xff0A982F),
-                              ),
-                              onPressed: () {},
-                              icon: const Icon(Icons.favorite),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                );
-              },
+            sliver: ProductCard(
+              productController: _productController,
             ),
           ),
         ],
