@@ -105,6 +105,10 @@ class ProductCard extends StatelessWidget {
                     style: IconButton.styleFrom(
                       backgroundColor: const Color(0xff0A982F),
                     ),
+                  ],
+                ),
+              ],
+            ),
                     onPressed: () {},
                     icon: const Icon(Icons.favorite),
                   ),
