@@ -88,6 +88,16 @@ class _DetailScreenState extends State<DetailScreen> {
           SliverAppBar(
             expandedHeight: 250,
             backgroundColor: Colors.white,
+            leading: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: const Icon(
+                Icons.arrow_back,
+                color: Colors.white,
+                size: 30,
+              ),
+            ),
             flexibleSpace: FlexibleSpaceBar(
               background: Image.network(
                 "https://images.squarespace-cdn.com/content/v1/63e70128412db810be70533a/cace1682-b1d0-492b-b2ba-757804e7bfdc/HangingWallArt-FeatureImage.png?format=2500w",
@@ -97,7 +107,7 @@ class _DetailScreenState extends State<DetailScreen> {
           ),
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
