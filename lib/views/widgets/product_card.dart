@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_competiton/controllers/product_controller.dart';
+import 'package:flutter_competition/controllers/product_controller.dart';
 
 class ProductCard extends StatelessWidget {
   final ProductController productController;

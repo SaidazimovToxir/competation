@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_competiton/controllers/product_controller.dart';
-import 'package:flutter_competiton/views/widgets/product_card.dart';
+import 'package:flutter_competition/controllers/product_controller.dart';
+import 'package:flutter_competition/views/widgets/product_card.dart';
 
 class DetailScreen extends StatefulWidget {
   const DetailScreen({super.key});
