@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_competiton/controllers/product_controller.dart';
-import 'package:flutter_competiton/utils/app_constabs.dart';
-import 'package:flutter_competiton/views/widgets/button_widget.dart';
-import 'package:flutter_competiton/views/widgets/container_widget.dart';
-import 'package:flutter_competiton/views/widgets/custom_scroll.dart';
-import 'package:flutter_competiton/views/widgets/product_card.dart';
+import 'package:flutter_competition/utils/app_constabs.dart';
+import 'package:flutter_competition/views/widgets/cont1.dart';
 import 'package:provider/provider.dart';
+import '../../controllers/product_controller.dart';
+import '../widgets/custom_scroll.dart';
+import '../widgets/product_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -60,15 +59,13 @@ class _HomeScreenState extends State<HomeScreen> {
               )),
           CircleAvatar(
             radius: 15,
-            child: Image.asset(
-              "assets/images/image.png",
-            ),
+            child: Image.asset("assets/images/profile.png"),
           )
         ],
       ),
       body: Column(
         children: [
-          ContainerWidget(),
+          Cont1Widget(),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: SizedBox(
@@ -94,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -151,6 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Expanded(
             child: ProductCard(
               productController: productController,
+              isSelected: false,
             ),
           )
         ],

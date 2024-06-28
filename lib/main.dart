@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_competiton/controllers/product_controller.dart';
-import 'package:flutter_competiton/views/screens/home_screen.dart';
-import 'package:flutter_competiton/views/screens/detail_screen.dart';
-import 'package:flutter_competiton/views/widgets/custom_float_action_button.dart';
+import 'package:flutter_competition/controllers/cart_provider.dart';
+import 'package:flutter_competition/controllers/product_controller.dart';
+import 'package:flutter_competition/views/screens/home_screen.dart';
+import 'package:flutter_competition/views/screens/main_screen.dart';
+import 'package:flutter_competition/views/screens/payment.dart';
+import 'package:flutter_competition/views/screens/detail_screen.dart';
+import 'package:flutter_competition/views/screens/succesfull_page.dart';
+import 'package:flutter_competition/views/widgets/custom_float_action_button.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -19,13 +23,14 @@ class MainApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => ProductController(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => CartProvider(),
+        ),
       ],
-      builder: (context, child) {
-        return const MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: HomeScreen(),
-        );
-      },
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Payment(),
+      ),
     );
   }
 }

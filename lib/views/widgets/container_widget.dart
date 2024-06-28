@@ -1,84 +1,66 @@
 import 'package:flutter/material.dart';
 
 class ContainerWidget extends StatelessWidget {
-  const ContainerWidget({super.key});
+  final String firstText;
+  final String secondText;
+  final bool showImage;
+  final Widget? additionalWidget;
+
+  ContainerWidget({
+    required this.firstText,
+    required this.secondText,
+    this.showImage = true,
+    this.additionalWidget,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
-        top: 30,
-        left: 20,
-        bottom: 20,
-      ),
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          children: [
-            Container(
-              clipBehavior: Clip.hardEdge,
-              alignment: Alignment.center,
-              height: 200,
-              width: 350,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  shape: BoxShape.rectangle,
-                  image: const DecorationImage(
-                      image: AssetImage("assets/images/three.png"),
-                      fit: BoxFit.cover)),
-              child: const Text(
-                "Living Room",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold),
+      padding: const EdgeInsets.all(15.0),
+      child: Container(
+        width: double.infinity,
+        height: 100,
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey, width: 1),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  const Icon(Icons.shopping_cart_outlined, size: 35),
+                  const SizedBox(width: 20),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        firstText,
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 22),
+                      ),
+                      Text(
+                        secondText,
+                        style:
+                            const TextStyle(color: Colors.grey, fontSize: 18),
+                      ),
+                    ],
+                  )
+                ],
               ),
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            Container(
-              clipBehavior: Clip.hardEdge,
-              alignment: Alignment.center,
-              height: 200,
-              width: 350,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  shape: BoxShape.rectangle,
-                  image: const DecorationImage(
-                      image: AssetImage("assets/images/one.png"),
-                      fit: BoxFit.cover)),
-              child: const Text(
-                "Living Room",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            Container(
-              clipBehavior: Clip.hardEdge,
-              alignment: Alignment.center,
-              height: 200,
-              width: 350,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  shape: BoxShape.rectangle,
-                  image: const DecorationImage(
-                      image: AssetImage("assets/images/two.png"),
-                      fit: BoxFit.cover)),
-              child: const Text(
-                "Living Room",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold),
-              ),
-            )
-          ],
+              if (showImage)
+                const Icon(
+                  Icons.arrow_right_alt_sharp,
+                  size: 50,
+                )
+              else
+                additionalWidget ?? Container(),
+            ],
+          ),
         ),
       ),
     );
