@@ -7,19 +7,22 @@ class Cont1Widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
-        top: 30,
-        left: 20,
-        bottom: 20,
+      padding: const EdgeInsets.symmetric(
+        vertical: 30,
       ),
       child: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         scrollDirection: Axis.horizontal,
         child: Row(
           children: [
             InkWell(
               onTap: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (ctx) => DetailScreen()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (ctx) => DetailScreen(),
+                  ),
+                );
               },
               child: Container(
                 clipBehavior: Clip.hardEdge,
@@ -27,17 +30,20 @@ class Cont1Widget extends StatelessWidget {
                 height: 200,
                 width: 350,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    shape: BoxShape.rectangle,
-                    image: const DecorationImage(
-                        image: AssetImage("assets/images/three.png"),
-                        fit: BoxFit.cover)),
+                  borderRadius: BorderRadius.circular(20),
+                  shape: BoxShape.rectangle,
+                  image: const DecorationImage(
+                    image: AssetImage("assets/images/three.png"),
+                    fit: BoxFit.cover,
+                  ),
+                ),
                 child: const Text(
                   "Living Room",
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold),
+                    color: Colors.white,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
@@ -46,8 +52,12 @@ class Cont1Widget extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (ctx) => const DetailScreen()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (ctx) => const DetailScreen(),
+                  ),
+                );
               },
               child: Container(
                 clipBehavior: Clip.hardEdge,
@@ -55,17 +65,20 @@ class Cont1Widget extends StatelessWidget {
                 height: 200,
                 width: 350,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    shape: BoxShape.rectangle,
-                    image: const DecorationImage(
-                        image: AssetImage("assets/images/one.png"),
-                        fit: BoxFit.cover)),
+                  borderRadius: BorderRadius.circular(20),
+                  shape: BoxShape.rectangle,
+                  image: const DecorationImage(
+                    image: AssetImage("assets/images/one.png"),
+                    fit: BoxFit.cover,
+                  ),
+                ),
                 child: const Text(
                   "Dining Room",
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold),
+                    color: Colors.white,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
@@ -74,8 +87,12 @@ class Cont1Widget extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (ctx) => const DetailScreen()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (ctx) => const DetailScreen(),
+                  ),
+                );
               },
               child: Container(
                 clipBehavior: Clip.hardEdge,
@@ -83,17 +100,20 @@ class Cont1Widget extends StatelessWidget {
                 height: 200,
                 width: 350,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    shape: BoxShape.rectangle,
-                    image: const DecorationImage(
-                        image: AssetImage("assets/images/two.png"),
-                        fit: BoxFit.cover)),
+                  borderRadius: BorderRadius.circular(20),
+                  shape: BoxShape.rectangle,
+                  image: const DecorationImage(
+                    image: AssetImage("assets/images/two.png"),
+                    fit: BoxFit.cover,
+                  ),
+                ),
                 child: const Text(
                   "Studio",
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold),
+                    color: Colors.white,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             )
